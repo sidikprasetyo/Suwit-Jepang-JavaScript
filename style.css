@@ -43,7 +43,7 @@ table {
 }
 
 
-/* Suwit Jawa 2.0 */
+/* Suwit Jepang */
 
 body {
     font-family: arial;
@@ -110,6 +110,13 @@ h1 {
 ul {
     padding-top: 80px;
     padding-left: 25px;
+}
+
+ul.skor{
+    font-size: 22px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding: 10px 5px 0 5px;
+    text-align: center;
 }
 
 li {

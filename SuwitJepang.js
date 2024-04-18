@@ -1,3 +1,6 @@
+let skorKomputer = 0;
+let skorPlayer = 0;
+
 function getPilihanKomputer() {
   const comp = Math.random();
 
@@ -11,6 +14,21 @@ function getHasil(comp, player) {
   if (player == "batu") return comp == "kertas" ? "Kalah" : "Menang";
   if (player == "kertas") return comp == "batu" ? "Menang" : "Kalah";
   if (player == "gunting") return comp == "kertas" ? "Menang" : "Kalah";
+}
+
+function skor(hasil) {
+  const skorInfo = document.querySelector(".skor");
+  const hasilSkorKomputer = skorInfo.querySelector(".nilai1");
+  const hasilSkorPlayer = skorInfo.querySelector(".nilai2");
+
+  if (hasil == "Menang") {
+    skorPlayer++;
+  } else if (hasil == "Kalah") {
+    skorKomputer++;
+  }
+
+  hasilSkorKomputer.innerHTML = skorKomputer;
+  hasilSkorPlayer.innerHTML = skorPlayer;
 }
 
 function putar() {
@@ -43,6 +61,8 @@ pilihan.forEach(function (pilih) {
 
       const info = document.querySelector(".info");
       info.innerHTML = hasil;
+
+      skor(hasil);
     }, 1000);
   });
 });
